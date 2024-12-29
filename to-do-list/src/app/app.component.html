@@ -1,0 +1,27 @@
+<div class="container mt-5">
+
+  <div class="row text-center text-dark bg-danger py-2">
+    <h2 class="w-100">To-Do List</h2>
+  </div>
+
+  <div class="row mt-3 d-flex justify-content-center align-items-center" style="height: 100px;">
+    <div class="text-center text-dark bg-success px-4 py-2" style="width: 50%;">
+      <input type="text" class="form-control" [(ngModel)]="task" placeholder="Enter your task">
+<button class="btn btn-primary" (click)="addTask()">Add Task</button>
+    </div>
+  </div>
+
+
+<div *ngFor="let item of tasks; let i = index" class="row mt-3 justify-content-center">
+  <div class="col-8 d-flex align-items-center justify-content-between border p-2 ">
+    <span>{{ item }}</span>
+    <button type="button" class="btn btn-danger">
+      <i class="bi bi-trash" (click)="DeleteTask(i)"></i>
+    </button>
+  </div>
+</div>
+
+
+</div>
+
+
